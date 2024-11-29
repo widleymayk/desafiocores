@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar Cor de Fundo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease;
+            text-align: center;
+        }
+
+        #colorName {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: black;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background-color: none;
+            color: none;
+            border: black;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="changeBackgroundColor()">Mudar Cor</button>
+    <div id="colorName"></div>
+
+    <script>
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#FFFF33", "#33FFF6"];
+        let currentColorIndex = 0;
+
+        function changeBackgroundColor() {
+            
+            document.body.style.backgroundColor = colors[currentColorIndex];
+            
+            document.getElementById('colorName').textContent = colors[currentColorIndex];
+            
+            
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+        }
+    </script>
+
+</body>
+</html>
